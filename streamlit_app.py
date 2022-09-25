@@ -6,24 +6,63 @@ import json
 st.title("Ames House Price Prediction")
 
 # Get user inputs
-subclass = st.selectbox("Building Class: ", df_cleaned['MS SubClass'].unique(), help ='')
+subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,120,150,160,180,190), help = '''20 1-STORY 1946 & NEWER ALL STYLES
+30 1-STORY 1945 & OLDER
+40 1-STORY W/FINISHED ATTIC ALL AGES
+45 1-1/2 STORY - UNFINISHED ALL AGES
+50 1-1/2 STORY FINISHED ALL AGES
+60 2-STORY 1946 & NEWER
+70 2-STORY 1945 & OLDER
+75 2-1/2 STORY ALL AGES
+80 SPLIT OR MULTI-LEVEL
+85 SPLIT FOYER
+90 DUPLEX - ALL STYLES AND AGES
+120 1-STORY PUD (Planned Unit Development) - 1946 & NEWER
+150 1-1/2 STORY PUD - ALL AGES
+160 2-STORY PUD - 1946 & NEWER
+180 PUD - MULTILEVEL - INCL SPLIT LEV/FOYER
+190 2 FAMILY CONVERSION - ALL STYLES AND AGES''')
 
-zoning = st.selectbox("Zoning: ", df_cleaned['MS Zoning'].unique(), help = '')
+zoning = st.selectbox("Zoning: ", df_cleaned['MS Zoning'].unique(), help = '''A Agriculture
+C Commercial
+FV Floating Village Residential
+I Industrial
+RH Residential High Density
+RL Residential Low Density
+RP Residential Low Density Park
+RM Residential Medium Density
+''')
 
 lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property")
 
 lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet")
 
-street = st.selectbox("Street: ", df_cleaned['Street'].unique(), help = '''Grvl Gravel\nPave Paved
+street = st.selectbox("Street: ", df_cleaned['Street'].unique(), help = '''Grvl Gravel
+Pave Paved
 ''')
 
-alley = st.selectbox("Alley: ", df_cleaned['Alley'].unique(), help = '')
+alley = st.selectbox("Alley: ", df_cleaned['Alley'].unique(), help = '''Grvl Gravel
+Pave Paved
+NA No alley access
+''')
 
-lotshape = st.selectbox("Lot Shape: ", df_cleaned['Lot Shape'].unique(), help = '')
+lotshape = st.selectbox("Lot Shape: ", df_cleaned['Lot Shape'].unique(), help = '''Reg Regular
+IR1 Slightly irregular
+IR2 Moderately Irregular
+IR3 Irregular
+''')
 
-landcontour = st.selectbox("Land Contour: ", df_cleaned['Land Contour'].unique(), help = '')
+landcontour = st.selectbox("Land Contour: ", df_cleaned['Land Contour'].unique(), help = '''Lvl Near Flat/Level
+Bnk Banked - Quick and significant rise from street grade to building
+HLS Hillside - Significant slope from side to side
+Low Depression
+''')
 
-utilities = st.selectbox("Utilities: ", df_cleaned['Utilities'].unique(), help = '')
+utilities = st.selectbox("Utilities: ", df_cleaned['Utilities'].unique(), help = '''AllPub All public Utilities (E,G,W,& S)
+NoSewr Electricity, Gas, and Water (Septic Tank)
+NoSeWa Electricity and Gas Only
+ELO Electricity only
+''')
 
 lotconfig = st.selectbox("Lot Config: ", df_cleaned['Lot Config'].unique(), help = '''Inside Inside lot
 Corner Corner lot
