@@ -23,7 +23,7 @@ subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,12
 180 PUD - MULTILEVEL - INCL SPLIT LEV/FOYER
 190 2 FAMILY CONVERSION - ALL STYLES AND AGES''')
 
-zoning = st.selectbox("Zoning: ", df_cleaned['MS Zoning'].unique(), help = '''A Agriculture
+zoning = st.selectbox("Zoning: ", ('RL', 'RM', 'FV', 'C (all)', 'A (agr)', 'RH', 'I (all)'), help = '''A Agriculture
 C Commercial
 FV Floating Village Residential
 I Industrial
@@ -37,46 +37,49 @@ lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet
 
 lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet")
 
-street = st.selectbox("Street: ", df_cleaned['Street'].unique(), help = '''Grvl Gravel
+street = st.selectbox("Street: ", ('Pave', 'Grvl'), help = '''Grvl Gravel
 Pave Paved
 ''')
 
-alley = st.selectbox("Alley: ", df_cleaned['Alley'].unique(), help = '''Grvl Gravel
+alley = st.selectbox("Alley: ", ('0', 'Pave', 'Grvl'), help = '''Grvl Gravel
 Pave Paved
 NA No alley access
 ''')
 
-lotshape = st.selectbox("Lot Shape: ", df_cleaned['Lot Shape'].unique(), help = '''Reg Regular
+lotshape = st.selectbox("Lot Shape: ", ('Reg', 'IR1', 'IR2', 'IR3'), help = '''Reg Regular
 IR1 Slightly irregular
 IR2 Moderately Irregular
 IR3 Irregular
 ''')
 
-landcontour = st.selectbox("Land Contour: ", df_cleaned['Land Contour'].unique(), help = '''Lvl Near Flat/Level
+landcontour = st.selectbox("Land Contour: ", ('Lvl', 'HLS', 'Bnk', 'Low'), help = '''Lvl Near Flat/Level
 Bnk Banked - Quick and significant rise from street grade to building
 HLS Hillside - Significant slope from side to side
 Low Depression
 ''')
 
-utilities = st.selectbox("Utilities: ", df_cleaned['Utilities'].unique(), help = '''AllPub All public Utilities (E,G,W,& S)
+utilities = st.selectbox("Utilities: ", ('AllPub', 'NoSeWa', 'NoSewr'), help = '''AllPub All public Utilities (E,G,W,& S)
 NoSewr Electricity, Gas, and Water (Septic Tank)
 NoSeWa Electricity and Gas Only
 ELO Electricity only
 ''')
 
-lotconfig = st.selectbox("Lot Config: ", df_cleaned['Lot Config'].unique(), help = '''Inside Inside lot
+lotconfig = st.selectbox("Lot Config: ", ('Inside', 'CulDSac', 'Corner', 'FR2', 'FR3'), help = '''Inside Inside lot
 Corner Corner lot
 CulDSac Cul-de-sac
 FR2 Frontage on 2 sides of property
 FR3 Frontage on 3 sides of property
 ''')
 
-landslope = st.selectbox("Land Slope: ", df_cleaned['Land Slope'].unique(), help = '''Gtl Gentle slope
+landslope = st.selectbox("Land Slope: ", ('Gtl', 'Sev', 'Mod'), help = '''Gtl Gentle slope
 Mod Moderate Slope
 Sev Severe Slope
 ''')
 
-neighborhood = st.selectbox("Neighborhood: ", df_cleaned['Neighborhood'].unique(), help = '''Blmngtn Bloomington Heights
+neighborhood = st.selectbox("Neighborhood: ", ('NAmes', 'Sawyer', 'SawyerW', 'Timber', 'Edwards', 'OldTown','BrDale', 'CollgCr', 
+                                               'Somerst', 'Mitchel', 'StoneBr', 'NridgHt','Gilbert', 'Crawfor', 'IDOTRR', 'NWAmes',
+                                               'Veenker', 'MeadowV','SWISU', 'NoRidge', 'ClearCr', 'Blmngtn', 'BrkSide', 'NPkVill',
+                                               'Blueste', 'GrnHill', 'Greens', 'Landmrk'), help = '''Blmngtn Bloomington Heights
 Blueste Bluestem
 BrDale Briardale
 BrkSide Brookside
@@ -103,7 +106,8 @@ Timber Timberland
 Veenker Veenker
 ''')
 
-condition1 = st.selectbox("Condition 1: ", df_cleaned['Condition 1'].unique(), help = '''Artery Adjacent to arterial street
+condition1 = st.selectbox("Condition 1: ", ('Norm', 'RRAe', 'PosA', 'Artery', 'Feedr', 'PosN', 'RRAn', 'RRNe',
+       'RRNn'), help = '''Artery Adjacent to arterial street
 Feedr Adjacent to feeder street
 Norm Normal
 RRNn Within 200' of North-South Railroad
@@ -114,7 +118,7 @@ RRNe Within 200' of East-West Railroad
 RRAe Adjacent to East-West Railroad
 ''')
 
-condition2 = st.selectbox("Condition 2: ", df_cleaned['Condition 2'].unique(), help = '''Artery Adjacent to arterial street
+condition2 = st.selectbox("Condition 2: ", ('Norm', 'RRNn', 'Feedr', 'Artery', 'PosA', 'PosN', 'RRAe', 'RRAn'), help = '''Artery Adjacent to arterial street
 Feedr Adjacent to feeder street
 Norm Normal
 RRNn Within 200' of North-South Railroad
@@ -125,14 +129,15 @@ RRNe Within 200' of East-West Railroad
 RRAe Adjacent to East-West Railroad
 ''')
 
-bldgtype = st.selectbox("Bldg Type: ", df_cleaned['Bldg Type'].unique(), help = '''1Fam Single-family Detached
+bldgtype = st.selectbox("Bldg Type: ", ('1Fam', 'TwnhsE', 'Twnhs', '2fmCon', 'Duplex'), help = '''1Fam Single-family Detached
 2FmCon Two-family Conversion; originally built as one-family dwelling
 Duplx Duplex
 TwnhsE Townhouse End Unit
 TwnhsI Townhouse Inside Unit
 ''')
 
-housetyle = st.selectbox("House Style: ", df_cleaned['House Style'].unique(), help = '''1Story One story
+housetyle = st.selectbox("House Style: ", ('1Story', '2Story', '1.5Fin', 'SFoyer', 'SLvl', '2.5Unf', '2.5Fin',
+       '1.5Unf'), help = '''1Story One story
 1.5Fin One and one-half story: 2nd level finished
 1.5Unf One and one-half story: 2nd level unfinished
 2Story Two story
@@ -142,7 +147,7 @@ SFoyer Split Foyer
 SLvl Split Level
 ''')
 
-overallqual = st.selectbox("Overall Qual: ", df_cleaned['Overall Qual'].unique(), help = '''10 Very Excellent
+overallqual = st.selectbox("Overall Qual: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''10 Very Excellent
 9 Excellent
 8 Very Good
 7 Good
@@ -154,7 +159,7 @@ overallqual = st.selectbox("Overall Qual: ", df_cleaned['Overall Qual'].unique()
 1 Very Poor
 ''')
 
-overallcond = st.selectbox("Overall Cond: ", df_cleaned['Overall Cond'].unique(), help = '''10 Very Excellent
+overallcond = st.selectbox("Overall Cond: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''10 Very Excellent
 9 Excellent
 8 Very Good
 7 Good
@@ -170,7 +175,7 @@ yearbuilt = st.number_input("Year Built: ", min_value = 0, max_value = 2022, hel
 
 yearremodadd = st.number_input("Year Remod/Add: ", min_value = 0, max_value = 2022, help="Remodel date (same as construction date if no remodeling or additions)")
 
-roofstyle = st.selectbox("Roof Style: ", df_cleaned['Roof Style'].unique(), help = '''Flat Flat
+roofstyle = st.selectbox("Roof Style: ", ('Gable', 'Hip', 'Flat', 'Mansard', 'Shed', 'Gambrel'), help = '''Flat Flat
 Gable Gable
 Gambrel Gabrel (Barn)
 Hip Hip
@@ -178,7 +183,7 @@ Mansard Mansard
 Shed Shed
 ''')
 
-roofmatl = st.selectbox("Roof Matl: ", df_cleaned['Roof Matl'].unique(), help = '''ClyTile Clay or Tile
+roofmatl = st.selectbox("Roof Matl: ", ('CompShg', 'WdShngl', 'Tar&Grv', 'WdShake', 'Membran', 'ClyTile'), help = '''ClyTile Clay or Tile
 CompShg Standard (Composite) Shingle
 Membran Membrane
 Metal Metal
@@ -188,7 +193,9 @@ WdShake Wood Shakes
 WdShngl Wood Shingles
 ''')
 
-exterior1st = st.selectbox("Exterior 1st: ", df_cleaned['Exterior 1st'].unique(), help = '''AsbShng Asbestos Shingles
+exterior1st = st.selectbox("Exterior 1st: ", ('VinylSd', 'HdBoard', 'Wd Sdng', 'BrkFace', 'Plywood', 'MetalSd',
+                                              'AsbShng', 'CemntBd', 'WdShing', 'Stucco', 'BrkComm', 'Stone',
+                                              'CBlock', 'ImStucc', 'AsphShn'), help = '''AsbShng Asbestos Shingles
 AsphShn Asphalt Shingles
 BrkComm Brick Common
 BrkFace Brick Face
@@ -207,7 +214,7 @@ Wd Sdng Wood Siding
 WdShing Wood Shingles
 ''')
 
-masvnrtype = st.selectbox("Mas Vnr Type: ", df_cleaned['Mas Vnr Type'].unique(), help = '''BrkCmn Brick Common
+masvnrtype = st.selectbox("Mas Vnr Type: ", ('None', 'BrkFace', 'Stone', 'BrkCmn', 'CBlock'), help = '''BrkCmn Brick Common
 BrkFace Brick Face
 CBlock Cinder Block
 None None
@@ -216,21 +223,21 @@ Stone Stone
 
 masvnrarea= st.number_input("Mas Vnr Area: ", min_value = 0, help="Masonry veneer area in square feet")
 
-exterqual = st.selectbox("Exter Qual: ", df_cleaned['Exter Qual'].unique(), help = '''Ex Excellent
+exterqual = st.selectbox("Exter Qual: ", ('TA', 'Gd', 'Ex', 'Fa', 'Po'), help = '''Ex Excellent
 Gd Good
 TA Average/Typical
 Fa Fair
 Po Poor
 ''')
 
-extercond = st.selectbox("Exter Cond: ", df_cleaned['Exter Cond'].unique(), help = '''Ex Excellent
+extercond = st.selectbox("Exter Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent
 Gd Good
 TA Average/Typical
 Fa Fair
 Po Poor
 ''')
 
-foundation = st.selectbox("Foundation: ", df_cleaned['Foundation'].unique(), help = '''BrkTil Brick & Tile
+foundation = st.selectbox("Foundation: ", ('PConc', 'CBlock', 'BrkTil', 'Slab', 'Stone', 'Wood'), help = '''BrkTil Brick & Tile
 CBlock Cinder Block
 PConc Poured Contrete
 Slab Slab
@@ -238,7 +245,7 @@ Stone Stone
 Wood Wood
 ''')
 
-bsmtqual = st.selectbox("Bsmt Qual: ", df_cleaned['Bsmt Qual'].unique(), help = '''Ex Excellent (100+ inches)
+bsmtqual = st.selectbox("Bsmt Qual: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent (100+ inches)
 Gd Good (90-99 inches)
 TA Typical (80-89 inches)
 Fa Fair (70-79 inches)
@@ -247,7 +254,7 @@ NA No Basement
 ''')
 
 
-bsmtcond = st.selectbox("Bsmt Cond: ", df_cleaned['Bsmt Cond'].unique(), help = '''Ex Excellent
+bsmtcond = st.selectbox("Bsmt Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent
 Gd Good
 TA Typical - slight dampness allowed
 Fa Fair - dampness or some cracking or settling
@@ -255,14 +262,14 @@ Po Poor - Severe cracking, settling, or wetness
 NA No Basement
 ''')
 
-bsmtexposure = st.selectbox("Bsmt Exposure: ", df_cleaned['Bsmt Exposure'].unique(), help = '''Gd Good Exposure
+bsmtexposure = st.selectbox("Bsmt Exposure: ", ('No', 'Gd', 'Av', 'Mn', 'NA') , help = '''Gd Good Exposure
 Av Average Exposure (split levels or foyers typically score average or above)
 Mn Mimimum Exposure
 No No Exposure
 NA No Basement
 ''')
 
-bsmtfintype1 = st.selectbox("BsmtFin Type 1: ", df_cleaned['BsmtFin Type 1'].unique(), help = '''GLQ Good Living Quarters
+bsmtfintype1 = st.selectbox("BsmtFin Type 1: ", ('GLQ', 'Unf', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''GLQ Good Living Quarters
 ALQ Average Living Quarters
 BLQ Below Average Living Quarters
 Rec Average Rec Room
@@ -273,7 +280,7 @@ NA No Basement
 
 bsmtfinsf1 = st.number_input("BsmtFin SF 1: ", min_value = 0, help="Type 1 finished square feet")
 
-bsmtfintype2 = st.selectbox("BsmtFin Type 2: ", df_cleaned['BsmtFin Type 2'].unique(), help = '''GLQ Good Living Quarters
+bsmtfintype2 = st.selectbox("BsmtFin Type 2: ", ('Unf', 'GLQ', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''GLQ Good Living Quarters
 ALQ Average Living Quarters
 BLQ Below Average Living Quarters
 Rec Average Rec Room
@@ -286,7 +293,7 @@ bsmtfinsf2 = st.number_input("BsmtFin SF 2: ", min_value = 0, help="Type 2 finis
 
 bsmtunfsf = st.number_input("Bsmt Unf SF: ", min_value = 0, help="Type 2 finished square feet")
 
-heating = st.selectbox("Heating: ", df_cleaned['Heating'].unique(), help = '''Floor Floor Furnace
+heating = st.selectbox("Heating: ", ('GasA', 'GasW', 'Grav', 'Wall', 'OthW'), help = '''Floor Floor Furnace
 GasA Gas forced warm air furnace
 GasW Gas hot water or steam heat
 Grav Gravity furnace
@@ -294,18 +301,18 @@ OthW Hot water or steam heat other than gas
 Wall Wall furnace
 ''')
 
-heatingqc = st.selectbox("Heating QC: ", df_cleaned['Heating QC'].unique(), help = '''Ex Excellent
+heatingqc = st.selectbox("Heating QC: ", ('Ex', 'TA', 'Gd', 'Fa', 'Po'), help = '''Ex Excellent
 Gd Good
 TA Average/Typical
 Fa Fair
 Po Poor
 ''')
 
-centralair = st.selectbox("Central Air: ", df_cleaned['Central Air'].unique(), help = '''N No
+centralair = st.selectbox("Central Air: ", ('Y', 'N'), help = '''N No
 Y Yes
 ''')
 
-electrical = st.selectbox("Electrical: ", df_cleaned['Electrical'].unique(), help = '''SBrkr Standard Circuit Breakers & Romex
+electrical = st.selectbox("Electrical: ", ('SBrkr', 'FuseF', 'FuseA', 'FuseP', 'Mix'), help = '''SBrkr Standard Circuit Breakers & Romex
 FuseA Fuse Box over 60 AMP and all Romex wiring (Average)
 FuseF 60 AMP Fuse Box and mostly Romex wiring (Fair)
 FuseP 60 AMP Fuse Box and mostly knob & tube wiring (poor)
@@ -332,14 +339,14 @@ bedroomabvgr = st.number_input("Bedroom AbvGr: ", min_value = 0, help="Number of
 
 kitchenabvgr = st.number_input("Kitchen AbvGr: ", min_value = 0, help="Number of kitchens")
 
-kitchenqual = st.selectbox("Kitchen Qual: ", df_cleaned['Kitchen Qual'].unique(), help = '''Ex Excellent
+kitchenqual = st.selectbox("Kitchen Qual: ", ('TA', 'Gd', 'Fa', 'Ex'), help = '''Ex Excellent
 Gd Good
 TA Typical/Average
 Fa Fair
 Po Poor
 ''')
 
-functional = st.selectbox("Functional: ", df_cleaned['Functional'].unique(), help = '''Typ Typical Functionality
+functional = st.selectbox("Functional: ", ('Typ', 'Mod', 'Min2', 'Maj1', 'Min1', 'Sev', 'Sal', 'Maj2'), help = '''Typ Typical Functionality
 Min1 Minor Deductions 1
 Min2 Minor Deductions 2
 Mod Moderate Deductions
@@ -351,7 +358,7 @@ Sal Salvage only
 
 fireplaces = st.number_input("Fireplaces: ", min_value = 0, help="Number of fireplaces")
 
-garagetype = st.selectbox("Garage Type: ", df_cleaned['Garage Type'].unique(), help = '''2Types More than one type of garage
+garagetype = st.selectbox("Garage Type: ", ('Attchd', 'Detchd', 'BuiltIn', 'Basment', '2Types', 'CarPort', 'NA'), help = '''2Types More than one type of garage
 Attchd Attached to home
 Basment Basement Garage
 BuiltIn Built-In (Garage part of house - typically has room above garage)
@@ -360,7 +367,7 @@ Detchd Detached from home
 NA No Garage
 ''')
 
-garagefinish = st.selectbox("Garage Finish: ", df_cleaned['Garage Finish'].unique(), help = '''Fin Finished
+garagefinish = st.selectbox("Garage Finish: ", ('Unf', 'RFn', 'Fin', 'MA'), help = '''Fin Finished
 RFn Rough Finished
 Unf Unfinished
 NA No Garage
@@ -368,7 +375,7 @@ NA No Garage
 
 garagearea = st.number_input("Garage Area: ", min_value = 0, help="Size of garage in square feet")
 
-garagecond = st.selectbox("Garage Cond: ", df_cleaned['Garage Cond'].unique(), help = '''Ex Excellent
+garagecond = st.selectbox("Garage Cond: ", ('TA', 'Fa', 'Po', 'Gd', 'Ex', 'NA'), help = '''Ex Excellent
 Gd Good
 TA Typical/Average
 Fa Fair
@@ -376,7 +383,7 @@ Po Poor
 NA No Garage
 ''')
 
-paveddrive = st.selectbox("Paved Drive: ", df_cleaned['Paved Drive'].unique(), help = '''Y Paved
+paveddrive = st.selectbox("Paved Drive: ", ('Y', 'N', 'P'), help = '''Y Paved
 P Partial Pavement
 N Dirt/Gravel
 ''')
@@ -393,14 +400,14 @@ screenporch = st.number_input("Screen Porch: ", min_value = 0, help="Screen porc
 
 poolarea = st.number_input("Pool Area: ", min_value = 0, help="Pool area in square feet")
 
-fence = st.selectbox("Fence: ", df_cleaned['Fence'].unique(), help = '''GdPrv Good Privacy
+fence = st.selectbox("Fence: ", ('NA', 'MnPrv', 'GdPrv', 'GdWo', 'MnWw'), help = '''GdPrv Good Privacy
 MnPrv Minimum Privacy
 GdWo Good Wood
 MnWw Minimum Wood/Wire
 NA No Fence
 ''')
 
-miscfeature = st.selectbox("Misc Feature: ", df_cleaned['Misc Feature'].unique(), help = '''Elev Elevator
+miscfeature = st.selectbox("Misc Feature: ", ('NA', 'Shed', 'TenC', 'Gar2', 'Othr', 'Elev'), help = '''Elev Elevator
 Gar2 2nd Garage (if not described in garage section)
 Othr Other
 Shed Shed (over 100 SF)
@@ -414,7 +421,7 @@ mosold = st.number_input("Mo Sold: ", min_value = 0, help="Month Sold")
 
 yrsold = st.number_input("Yr Sold: ", min_value = 0, help="Year Sold")
 
-saletype = st.selectbox("Sale Type: ", df_cleaned['Sale Type'].unique(), help = '''WD Warranty Deed - Conventional
+saletype = st.selectbox("Sale Type: ", ('WD ', 'New', 'COD', 'ConLD', 'Con', 'CWD', 'Oth', 'ConLI','ConLw'), help = '''WD Warranty Deed - Conventional
 CWD Warranty Deed - Cash
 VWD Warranty Deed - VA Loan
 New Home just constructed and sold
