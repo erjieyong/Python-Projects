@@ -6,8 +6,7 @@ import json
 st.title("Ames House Price Prediction")
 
 # Get user inputs
-subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,120,150,160,180,190), help = '''20 1-STORY 1946 & NEWER ALL STYLES
-30 1-STORY 1945 & OLDER
+subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,120,150,160,180,190), help = '''20 1-STORY 1946 & NEWER ALL STYLES\n30 1-STORY 1945 & OLDER
 40 1-STORY W/FINISHED ATTIC ALL AGES
 45 1-1/2 STORY - UNFINISHED ALL AGES
 50 1-1/2 STORY FINISHED ALL AGES
