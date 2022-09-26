@@ -15,7 +15,8 @@ col1, col2 , col3 = st.columns(3)
 
 with col1:
     # Get user inputs
-    subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,120,150,160,180,190), help = '''20 1-STORY 1946 & NEWER ALL STYLES\n
+    subclass = st.selectbox("Building Class: ", (20,30,40,45,50,60,70,75,80,85,90,120,150,160,180,190), help = '''
+    20 1-STORY 1946 & NEWER ALL STYLES\n
     30 1-STORY 1945 & OLDER\n
     40 1-STORY W/FINISHED ATTIC ALL AGES\n
     45 1-1/2 STORY - UNFINISHED ALL AGES\n
