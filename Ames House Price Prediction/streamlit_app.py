@@ -2,23 +2,6 @@ import streamlit as st
 import requests
 import json
 
-
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://images.unsplash.com/photo-1557443611-e64d90d03484?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-
-add_bg_from_url() 
-
 # Title of the page
 st.title("Ames House Price Prediction")
 
@@ -591,6 +574,23 @@ user_input = {'MS SubClass' : subclass,
               'Yr Sold' : yrsold, 
               'Sale Type' : saletype}
 #st.write(user_input)
+
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://images.unsplash.com/photo-1557443611-e64d90d03484?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
 
 # Code to post the user inputs to the API and get the predictions
 # Paste the URL to your GCP Cloud Run API here!
