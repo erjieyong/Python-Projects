@@ -3,6 +3,7 @@ import requests
 import json
 
 # Title of the page
+st.image(https://generalassemblydsi32.s3.ap-southeast-1.amazonaws.com/blackfin_logo_white-removebg.png, width =200)
 st.title("Ames House Price Prediction")
 
 st.caption("To get your house evaluated, do fill up as much information in the following as possible.")
@@ -624,6 +625,9 @@ def add_bg_from_url():
              background-attachment: fixed;
              background-size: cover
          }}
+         .h1, .h2, .css-k3w14i, .st-bq {
+            color:rgb(200 200 200 / 1)
+         }
          </style>
          """,
          unsafe_allow_html=True
