@@ -8,7 +8,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("./bg.jpg");
+             background-image: url("https://generalassemblydsi32.s3.ap-southeast-1.amazonaws.com/Background+Image.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
