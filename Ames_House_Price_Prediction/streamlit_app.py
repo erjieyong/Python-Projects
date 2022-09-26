@@ -36,7 +36,8 @@ with col1:
 
 with col2:
     
-    zoning = st.selectbox("Zoning: ", ('RL', 'RM', 'FV', 'C (all)', 'A (agr)', 'RH', 'I (all)'), help = '''A Agriculture\n
+    zoning = st.selectbox("Zoning: ", ('RL', 'RM', 'FV', 'C (all)', 'A (agr)', 'RH', 'I (all)'), help = '''
+    A Agriculture\n
     C Commercial\n
     FV Floating Village Residential\n
     I Industrial\n
@@ -51,32 +52,33 @@ with col3:
     neighborhood = st.selectbox("Neighborhood: ", ('NAmes', 'Sawyer', 'SawyerW', 'Timber', 'Edwards', 'OldTown','BrDale', 'CollgCr', 
                                                    'Somerst', 'Mitchel', 'StoneBr', 'NridgHt','Gilbert', 'Crawfor', 'IDOTRR', 'NWAmes',
                                                    'Veenker', 'MeadowV','SWISU', 'NoRidge', 'ClearCr', 'Blmngtn', 'BrkSide', 'NPkVill',
-                                                   'Blueste', 'GrnHill', 'Greens', 'Landmrk'), help = '''Blmngtn Bloomington Heights\n
-    Blueste Bluestem\n
-    BrDale Briardale\n
-    BrkSide Brookside\n
-    ClearCr Clear Creek\n
-    CollgCr College Creek\n
-    Crawfor Crawford\n
-    Edwards Edwards\n
-    Gilbert Gilbert\n
-    IDOTRR Iowa DOT and Rail Road\n
-    MeadowV Meadow Village\n
-    Mitchel Mitchell\n
-    Names North Ames\n
-    NoRidge Northridge\n
-    NPkVill Northpark Villa\n
-    NridgHt Northridge Heights\n
-    NWAmes Northwest Ames\n
-    OldTown Old Town\n
-    SWISU South & West of Iowa State University\n
-    Sawyer Sawyer\n
-    SawyerW Sawyer West\n
-    Somerst Somerset\n
-    StoneBr Stone Brook\n
-    Timber Timberland\n
-    Veenker Veenker
-    ''')
+                                                   'Blueste', 'GrnHill', 'Greens', 'Landmrk'), help = '''
+                                                    Blmngtn Bloomington Heights\n
+                                                    Blueste Bluestem\n
+                                                    BrDale Briardale\n
+                                                    BrkSide Brookside\n
+                                                    ClearCr Clear Creek\n
+                                                    CollgCr College Creek\n
+                                                    Crawfor Crawford\n
+                                                    Edwards Edwards\n
+                                                    Gilbert Gilbert\n
+                                                    IDOTRR Iowa DOT and Rail Road\n
+                                                    MeadowV Meadow Village\n
+                                                    Mitchel Mitchell\n
+                                                    Names North Ames\n
+                                                    NoRidge Northridge\n
+                                                    NPkVill Northpark Villa\n
+                                                    NridgHt Northridge Heights\n
+                                                    NWAmes Northwest Ames\n
+                                                    OldTown Old Town\n
+                                                    SWISU South & West of Iowa State University\n
+                                                    Sawyer Sawyer\n
+                                                    SawyerW Sawyer West\n
+                                                    Somerst Somerset\n
+                                                    StoneBr Stone Brook\n
+                                                    Timber Timberland\n
+                                                    Veenker Veenker
+                                                    ''')
     
 
 st.header("Lot information")
@@ -84,54 +86,62 @@ st.header("Lot information")
 col1, col2 , col3 = st.columns(3)
 
 with col1:
-    alley = st.selectbox("Alley: ", ('NA', 'Pave', 'Grvl'), help = '''Grvl Gravel\n
+    alley = st.selectbox("Alley: ", ('NA', 'Pave', 'Grvl'), help = '''
+    Grvl Gravel\n
     Pave Paved\n
     NA No alley access
     ''')
     
-    street = st.selectbox("Street: ", ('Pave', 'Grvl'), help = '''Grvl Gravel\n
+    street = st.selectbox("Street: ", ('Pave', 'Grvl'), help = '''
+    Grvl Gravel\n
     Pave Paved
     ''')
     
-    utilities = st.selectbox("Utilities: ", ('AllPub', 'NoSeWa', 'NoSewr'), help = '''AllPub All public Utilities (E,G,W,& S)\n
+    utilities = st.selectbox("Utilities: ", ('AllPub', 'NoSeWa', 'NoSewr'), help = '''
+    AllPub All public Utilities (E,G,W,& S)\n
     NoSewr Electricity, Gas, and Water (Septic Tank)\n
     NoSeWa Electricity and Gas Only\n
     ELO Electricity only
     ''')
         
     condition1 = st.selectbox("Condition 1: ", ('Norm', 'RRAe', 'PosA', 'Artery', 'Feedr', 'PosN', 'RRAn', 'RRNe',
-           'RRNn'), help = '''Proximity to main road or railroad\n
-    Artery Adjacent to arterial street\n
-    Feedr Adjacent to feeder street\n
-    Norm Normal\n
-    RRNn Within 200' of North-South Railroad\n
-    RRAn Adjacent to North-South Railroad\n
-    PosN Near positive off-site feature--park, greenbelt, etc.\n
-    PosA Adjacent to postive off-site feature\n
-    RRNe Within 200' of East-West Railroad\n
-    RRAe Adjacent to East-West Railroad
-    ''')
+                                                'RRNn'), help = '''
+                                                Proximity to main road or railroad\n
+                                                Artery Adjacent to arterial street\n
+                                                Feedr Adjacent to feeder street\n
+                                                Norm Normal\n
+                                                RRNn Within 200' of North-South Railroad\n
+                                                RRAn Adjacent to North-South Railroad\n
+                                                PosN Near positive off-site feature--park, greenbelt, etc.\n
+                                                PosA Adjacent to postive off-site feature\n
+                                                RRNe Within 200' of East-West Railroad\n
+                                                RRAe Adjacent to East-West Railroad
+                                                ''')
 with col2:
-    lotshape = st.selectbox("Lot Shape: ", ('Reg', 'IR1', 'IR2', 'IR3'), help = '''Reg Regular\n
+    lotshape = st.selectbox("Lot Shape: ", ('Reg', 'IR1', 'IR2', 'IR3'), help = '''
+    Reg Regular\n
     IR1 Slightly irregular\n
     IR2 Moderately Irregular\n
     IR3 Irregular
     ''')
         
-    landcontour = st.selectbox("Land Contour: ", ('Lvl', 'HLS', 'Bnk', 'Low'), help = '''Lvl Near Flat/Level\n
+    landcontour = st.selectbox("Land Contour: ", ('Lvl', 'HLS', 'Bnk', 'Low'), help = '''
+    Lvl Near Flat/Level\n
     Bnk Banked - Quick and significant rise from street grade to building\n
     HLS Hillside - Significant slope from side to side\n
     Low Depression
     ''')
 
-    lotconfig = st.selectbox("Lot Config: ", ('Inside', 'CulDSac', 'Corner', 'FR2', 'FR3'), help = '''Inside Inside lot\n
+    lotconfig = st.selectbox("Lot Config: ", ('Inside', 'CulDSac', 'Corner', 'FR2', 'FR3'), help = '''
+    Inside Inside lot\n
     Corner Corner lot\n
     CulDSac Cul-de-sac\n
     FR2 Frontage on 2 sides of property\n
     FR3 Frontage on 3 sides of property
     ''')
 
-    condition2 = st.selectbox("Condition 2: ", ('Norm', 'RRNn', 'Feedr', 'Artery', 'PosA', 'PosN', 'RRAe', 'RRAn'), help = '''Proximity to main road or railroad (if a second is present)\n
+    condition2 = st.selectbox("Condition 2: ", ('Norm', 'RRNn', 'Feedr', 'Artery', 'PosA', 'PosN', 'RRAe', 'RRAn'), help = '''
+    Proximity to main road or railroad (if a second is present)\n
     Artery Adjacent to arterial street\n
     Feedr Adjacent to feeder street\n
     Norm Normal\n
@@ -144,7 +154,8 @@ with col2:
     ''')
 with col3:
         
-    landslope = st.selectbox("Land Slope: ", ('Gtl', 'Sev', 'Mod'), help = '''Gtl Gentle slope\n
+    landslope = st.selectbox("Land Slope: ", ('Gtl', 'Sev', 'Mod'), help = '''
+    Gtl Gentle slope\n
     Mod Moderate Slope\n
     Sev Severe Slope
     ''')
@@ -159,15 +170,16 @@ col1, col2 , col3 = st.columns(3)
 
 with col1:
 
-    bldgtype = st.selectbox("Bldg Type: ", ('1Fam', 'TwnhsE', 'Twnhs', '2fmCon', 'Duplex'), help = '''1Fam Single-family Detached\n
+    bldgtype = st.selectbox("Bldg Type: ", ('1Fam', 'TwnhsE', 'Twnhs', '2fmCon', 'Duplex'), help = '''
+    1Fam Single-family Detached\n
     2FmCon Two-family Conversion; originally built as one-family dwelling\n
     Duplx Duplex\n
     TwnhsE Townhouse End Unit\n
     TwnhsI Townhouse Inside Unit
     ''')
         
-    housetyle = st.selectbox("House Style: ", ('1Story', '2Story', '1.5Fin', 'SFoyer', 'SLvl', '2.5Unf', '2.5Fin',
-           '1.5Unf'), help = '''1Story One story\n
+    housetyle = st.selectbox("House Style: ", ('1Story', '2Story', '1.5Fin', 'SFoyer', 'SLvl', '2.5Unf', '2.5Fin','1.5Unf'), help = '''
+    1Story One story\n
     1.5Fin One and one-half story: 2nd level finished\n
     1.5Unf One and one-half story: 2nd level unfinished\n
     2Story Two story\n
@@ -177,7 +189,8 @@ with col1:
     SLvl Split Level
     ''')
     
-    roofstyle = st.selectbox("Roof Style: ", ('Gable', 'Hip', 'Flat', 'Mansard', 'Shed', 'Gambrel'), help = '''Flat Flat\n
+    roofstyle = st.selectbox("Roof Style: ", ('Gable', 'Hip', 'Flat', 'Mansard', 'Shed', 'Gambrel'), help = '''
+    Flat Flat\n
     Gable Gable\n
     Gambrel Gabrel (Barn)\n
     Hip Hip\n
@@ -185,7 +198,8 @@ with col1:
     Shed Shed
     ''')
         
-    masvnrtype = st.selectbox("Mas Vnr Type: ", ('None', 'BrkFace', 'Stone', 'BrkCmn', 'CBlock'), help = '''BrkCmn Brick Common\n
+    masvnrtype = st.selectbox("Mas Vnr Type: ", ('None', 'BrkFace', 'Stone', 'BrkCmn', 'CBlock'), help = '''
+    BrkCmn Brick Common\n
     BrkFace Brick Face\n
     CBlock Cinder Block\n
     None None\n
@@ -193,7 +207,8 @@ with col1:
     ''')
     
     
-    exterqual = st.selectbox("Exter Qual: ", ('TA', 'Gd', 'Ex', 'Fa', 'Po'), help = '''Ex Excellent\n
+    exterqual = st.selectbox("Exter Qual: ", ('TA', 'Gd', 'Ex', 'Fa', 'Po'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Average/Typical\n
     Fa Fair\n
@@ -201,7 +216,8 @@ with col1:
     ''')
 with col2:
     
-    overallqual = st.selectbox("Overall Qual: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''Overall material and finish quality\n
+    overallqual = st.selectbox("Overall Qual: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''
+    Overall material and finish quality\n
     10 Very Excellent\n
     9 Excellent\n
     8 Very Good\n
@@ -214,7 +230,8 @@ with col2:
     1 Very Poor
     ''')
     
-    overallcond = st.selectbox("Overall Cond: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''Overall condition rating\n
+    overallcond = st.selectbox("Overall Cond: ", (5.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0), help = '''
+    Overall condition rating\n
     10 Very Excellent\n
     9 Excellent\n
     8 Very Good\n
@@ -227,7 +244,8 @@ with col2:
     1 Very Poor
     ''')
 
-    roofmatl = st.selectbox("Roof Matl: ", ('CompShg', 'WdShngl', 'Tar&Grv', 'WdShake', 'Membran', 'ClyTile'), help = '''ClyTile Clay or Tile\n
+    roofmatl = st.selectbox("Roof Matl: ", ('CompShg', 'WdShngl', 'Tar&Grv', 'WdShake', 'Membran', 'ClyTile'), help = '''
+    ClyTile Clay or Tile\n
     CompShg Standard (Composite) Shingle\n
     Membran Membrane\n
     Metal Metal\n
@@ -239,7 +257,8 @@ with col2:
     
     masvnrarea= st.number_input("Mas Vnr Area: ", min_value = 0, help="Masonry veneer area in square feet", value = 100)
 
-    extercond = st.selectbox("Exter Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent\n
+    extercond = st.selectbox("Exter Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Average/Typical\n
     Fa Fair\n
@@ -254,46 +273,51 @@ with col3:
 
     exterior1st = st.selectbox("Exterior 1st: ", ('VinylSd', 'HdBoard', 'Wd Sdng', 'BrkFace', 'Plywood', 'MetalSd',
                                                   'AsbShng', 'CemntBd', 'WdShing', 'Stucco', 'BrkComm', 'Stone',
-                                                  'CBlock', 'ImStucc', 'AsphShn'), help = '''AsbShng Asbestos Shingles\n
-    AsphShn Asphalt Shingles\n
-    BrkComm Brick Common\n
-    BrkFace Brick Face\n
-    CBlock Cinder Block\n
-    CemntBd Cement Board\n
-    HdBoard Hard Board\n
-    ImStucc Imitation Stucco\n
-    MetalSd Metal Siding\n
-    Other Other\n
-    Plywood Plywood\n
-    PreCast PreCast\n
-    Stone Stone\n
-    Stucco Stucco\n
-    VinylSd Vinyl Siding\n
-    Wd Sdng Wood Siding\n
-    WdShing Wood Shingles
-    ''')
+                                                  'CBlock', 'ImStucc', 'AsphShn'), help = '''
+                                                  AsbShng Asbestos Shingles\n
+                                                  AsphShn Asphalt Shingles\n
+                                                  BrkComm Brick Common\n
+                                                  BrkFace Brick Face\n
+                                                  CBlock Cinder Block\n
+                                                  CemntBd Cement Board\n
+                                                  HdBoard Hard Board\n
+                                                  ImStucc Imitation Stucco\n
+                                                  MetalSd Metal Siding\n
+                                                  Other Other\n
+                                                  Plywood Plywood\n
+                                                  PreCast PreCast\n
+                                                  Stone Stone\n
+                                                  Stucco Stucco\n
+                                                  VinylSd Vinyl Siding\n
+                                                  Wd Sdng Wood Siding\n
+                                                  WdShing Wood Shingles
+                                                  ''')
     
-    foundation = st.selectbox("Foundation: ", ('PConc', 'CBlock', 'BrkTil', 'Slab', 'Stone', 'Wood'), help = '''BrkTil Brick & Tile\n
+    foundation = st.selectbox("Foundation: ", ('PConc', 'CBlock', 'BrkTil', 'Slab', 'Stone', 'Wood'), help = '''
+    BrkTil Brick & Tile\n
     CBlock Cinder Block\n
     PConc Poured Contrete\n
     Slab Slab\n
     Stone Stone\n
     Wood Wood
     ''')
+    
 st.header("Basement")
 #split into 3 columns
 col1, col2 , col3 = st.columns(3)
 
 with col1:
 
-    bsmtqual = st.selectbox("Bsmt Qual: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent (100+ inches)\n
+    bsmtqual = st.selectbox("Bsmt Qual: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''
+    Ex Excellent (100+ inches)\n
     Gd Good (90-99 inches)\n
     TA Typical (80-89 inches)\n
     Fa Fair (70-79 inches)\n
     Po Poor (<70 inches)\n
     NA No Basement
     ''')
-    bsmtfintype1 = st.selectbox("BsmtFin Type 1: ", ('GLQ', 'Unf', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''GLQ Good Living Quarters\n
+    bsmtfintype1 = st.selectbox("BsmtFin Type 1: ", ('GLQ', 'Unf', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''
+    GLQ Good Living Quarters\n
     ALQ Average Living Quarters\n
     BLQ Below Average Living Quarters\n
     Rec Average Rec Room\n
@@ -302,7 +326,8 @@ with col1:
     NA No Basement
     ''')
     
-    bsmtfintype2 = st.selectbox("BsmtFin Type 2: ", ('Unf', 'GLQ', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''GLQ Good Living Quarters\n
+    bsmtfintype2 = st.selectbox("BsmtFin Type 2: ", ('Unf', 'GLQ', 'ALQ', 'Rec', 'BLQ', 'LwQ', 'NA'), help = '''
+    GLQ Good Living Quarters\n
     ALQ Average Living Quarters\n
     BLQ Below Average Living Quarters\n
     Rec Average Rec Room\n
@@ -311,7 +336,8 @@ with col1:
     NA No Basement
     ''')
     
-    heating = st.selectbox("Heating: ", ('GasA', 'GasW', 'Grav', 'Wall', 'OthW'), help = '''Floor Floor Furnace\n
+    heating = st.selectbox("Heating: ", ('GasA', 'GasW', 'Grav', 'Wall', 'OthW'), help = '''
+    Floor Floor Furnace\n
     GasA Gas forced warm air furnace\n
     GasW Gas hot water or steam heat\n
     Grav Gravity furnace\n
@@ -323,7 +349,8 @@ with col1:
 
 with col2:
 
-    bsmtcond = st.selectbox("Bsmt Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent\n
+    bsmtcond = st.selectbox("Bsmt Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Typical - slight dampness allowed\n
     Fa Fair - dampness or some cracking or settling\n
@@ -333,7 +360,8 @@ with col2:
     bsmtfinsf1 = st.number_input("BsmtFin SF 1: ", min_value = 0, help="Type 1 finished square feet", value = 442)
     bsmtfinsf2 = st.number_input("BsmtFin SF 2: ", min_value = 0, help="Type 2 finished square feet", value = 48)
 
-    heatingqc = st.selectbox("Heating QC: ", ('Ex', 'TA', 'Gd', 'Fa', 'Po'), help = '''Ex Excellent\n
+    heatingqc = st.selectbox("Heating QC: ", ('Ex', 'TA', 'Gd', 'Fa', 'Po'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Average/Typical\n
     Fa Fair\n
@@ -344,7 +372,8 @@ with col2:
 
 with col3:
 
-    bsmtexposure = st.selectbox("Bsmt Exposure: ", ('No', 'Gd', 'Av', 'Mn', 'NA') , help = '''Gd Good Exposure\n
+    bsmtexposure = st.selectbox("Bsmt Exposure: ", ('No', 'Gd', 'Av', 'Mn', 'NA') , help = '''
+    Gd Good Exposure\n
     Av Average Exposure (split levels or foyers typically score average or above)\n
     Mn Mimimum Exposure\n
     No No Exposure\n
@@ -356,7 +385,8 @@ with col3:
     Y Yes
     ''')
 
-    electrical = st.selectbox("Electrical: ", ('SBrkr', 'FuseF', 'FuseA', 'FuseP', 'Mix'), help = '''SBrkr Standard Circuit Breakers & Romex\n
+    electrical = st.selectbox("Electrical: ", ('SBrkr', 'FuseF', 'FuseA', 'FuseP', 'Mix'), help = '''
+    SBrkr Standard Circuit Breakers & Romex\n
     FuseA Fuse Box over 60 AMP and all Romex wiring (Average)\n
     FuseF 60 AMP Fuse Box and mostly Romex wiring (Fair)\n
     FuseP 60 AMP Fuse Box and mostly knob & tube wiring (poor)\n
@@ -374,7 +404,8 @@ with col1:
     grlivarea = st.number_input("Gr Liv Area: ", min_value = 0, help="Above grade (ground) living area square feet", value = 1499)
     fullbath = st.number_input("Full Bath: ", min_value = 0, help="Full bathrooms above grade", value = 2)
 
-    functional = st.selectbox("Functional: ", ('Typ', 'Mod', 'Min2', 'Maj1', 'Min1', 'Sev', 'Sal', 'Maj2'), help = '''Home functionality rating\n
+    functional = st.selectbox("Functional: ", ('Typ', 'Mod', 'Min2', 'Maj1', 'Min1', 'Sev', 'Sal', 'Maj2'), help = '''
+    Home functionality rating\n
     Typ Typical Functionality\n
     Min1 Minor Deductions 1\n
     Min2 Minor Deductions 2\n
@@ -395,7 +426,8 @@ with col3:
     lowqualfinsf = st.number_input("Low Qual Fin SF: ", min_value = 0, help="Low quality finished square feet (all floors)", value = 6)
     bedroomabvgr = st.number_input("Bedroom AbvGr: ", min_value = 0, help="Number of bedrooms above basement level", value = 3)
 
-    kitchenqual = st.selectbox("Kitchen Qual: ", ('TA', 'Gd', 'Fa', 'Ex'), help = '''Ex Excellent\n
+    kitchenqual = st.selectbox("Kitchen Qual: ", ('TA', 'Gd', 'Fa', 'Ex'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Typical/Average\n
     Fa Fair\n
@@ -410,7 +442,8 @@ col1, col2 , col3 = st.columns(3)
 
 with col1:
 
-    garagetype = st.selectbox("Garage Type: ", ('Attchd', 'Detchd', 'BuiltIn', 'Basment', '2Types', 'CarPort', 'NA'), help = '''2Types More than one type of garage\n
+    garagetype = st.selectbox("Garage Type: ", ('Attchd', 'Detchd', 'BuiltIn', 'Basment', '2Types', 'CarPort', 'NA'), help = '''
+    2Types More than one type of garage\n
     Attchd Attached to home\n
     Basment Basement Garage\n
     BuiltIn Built-In (Garage part of house - typically has room above garage)\n
@@ -419,7 +452,8 @@ with col1:
     NA No Garage
     ''')
 
-    garagecond = st.selectbox("Garage Cond: ", ('TA', 'Fa', 'Po', 'Gd', 'Ex', 'NA'), help = '''Ex Excellent\n
+    garagecond = st.selectbox("Garage Cond: ", ('TA', 'Fa', 'Po', 'Gd', 'Ex', 'NA'), help = '''
+    Ex Excellent\n
     Gd Good\n
     TA Typical/Average\n
     Fa Fair\n
@@ -428,7 +462,8 @@ with col1:
     ''')
 with col2:
 
-    garagefinish = st.selectbox("Garage Finish: ", ('Unf', 'RFn', 'Fin', 'MA'), help = '''Fin Finished\n
+    garagefinish = st.selectbox("Garage Finish: ", ('Unf', 'RFn', 'Fin', 'MA'), help = '''
+    Fin Finished\n
     RFn Rough Finished\n
     Unf Unfinished\n
     NA No Garage
@@ -443,14 +478,16 @@ col1, col2 , col3 = st.columns(3)
 
 with col1:
 
-    paveddrive = st.selectbox("Paved Drive: ", ('Y', 'N', 'P'), help = '''Y Paved\n
+    paveddrive = st.selectbox("Paved Drive: ", ('Y', 'N', 'P'), help = '''
+    Y Paved\n
     P Partial Pavement\n
     N Dirt/Gravel
     ''')
     
     enclosedporch = st.number_input("Enclosed Porch: ", min_value = 0, help="Enclosed porch area in square feet", value = 23)
 
-    fence = st.selectbox("Fence: ", ('NA', 'MnPrv', 'GdPrv', 'GdWo', 'MnWw'), help = '''GdPrv Good Privacy\n
+    fence = st.selectbox("Fence: ", ('NA', 'MnPrv', 'GdPrv', 'GdWo', 'MnWw'), help = '''
+    GdPrv Good Privacy\n
     MnPrv Minimum Privacy\n
     GdWo Good Wood\n
     MnWw Minimum Wood/Wire\n
@@ -477,7 +514,8 @@ with col1:
 
 with col2:
 
-    miscfeature = st.selectbox("Misc Feature: ", ('NA', 'Shed', 'TenC', 'Gar2', 'Othr', 'Elev'), help = '''Elev Elevator\n
+    miscfeature = st.selectbox("Misc Feature: ", ('NA', 'Shed', 'TenC', 'Gar2', 'Othr', 'Elev'), help = '''
+    Elev Elevator\n
     Gar2 2nd Garage (if not described in garage section)\n
     Othr Other\n
     Shed Shed (over 100 SF)\n
@@ -491,7 +529,8 @@ with col3:
     
     miscval = st.number_input("Misc Val: ", min_value = 0, help="$Value of miscellaneous feature", value = 52)
 
-    saletype = st.selectbox("Sale Type: ", ('WD ', 'New', 'COD', 'ConLD', 'Con', 'CWD', 'Oth', 'ConLI','ConLw'), help = '''WD Warranty Deed - Conventional\n
+    saletype = st.selectbox("Sale Type: ", ('WD ', 'New', 'COD', 'ConLD', 'Con', 'CWD', 'Oth', 'ConLI','ConLw'), help = '''
+    WD Warranty Deed - Conventional\n
     CWD Warranty Deed - Cash\n
     VWD Warranty Deed - VA Loan\n
     New Home just constructed and sold\n
