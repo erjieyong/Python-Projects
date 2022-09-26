@@ -568,7 +568,7 @@ user_input = {'MS SubClass' : subclass,
               'Mo Sold' : mosold, 
               'Yr Sold' : yrsold, 
               'Sale Type' : saletype}
-st.write(user_input)
+#st.write(user_input)
 
 # Code to post the user inputs to the API and get the predictions
 # Paste the URL to your GCP Cloud Run API here!
@@ -580,4 +580,4 @@ predictions = response.json()
 
 # Add a submit button
 if st.button("Submit"): 
-    st.write(f"Prediction: {predictions['predictions'][0]}")
+    st.write(f"Your house value is expected to be: {predictions['predictions'][0]:,.2f}")
