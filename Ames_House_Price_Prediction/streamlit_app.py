@@ -83,7 +83,7 @@ st.header("Lot information")
 col1, col2 , col3 = st.columns(3)
 
 with col1:
-    alley = st.selectbox("Alley: ", ('0', 'Pave', 'Grvl'), help = '''Grvl Gravel\n
+    alley = st.selectbox("Alley: ", ('NA', 'Pave', 'Grvl'), help = '''Grvl Gravel\n
     Pave Paved\n
     NA No alley access
     ''')
@@ -148,9 +148,9 @@ with col3:
     Sev Severe Slope
     ''')
     
-    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet")
+    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet", value = 10065.21)
 
-    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property")
+    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property", value = 70.24)
 
 st.header("Building Information")
 #split into 3 columns
@@ -236,7 +236,7 @@ with col2:
     WdShngl Wood Shingles
     ''')
     
-    masvnrarea= st.number_input("Mas Vnr Area: ", min_value = 0, help="Masonry veneer area in square feet")
+    masvnrarea= st.number_input("Mas Vnr Area: ", min_value = 0, help="Masonry veneer area in square feet", value = 99.70)
 
     extercond = st.selectbox("Exter Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent\n
     Gd Good\n
@@ -246,9 +246,9 @@ with col2:
     ''')
 with col3:
 
-    yearbuilt = st.number_input("Year Built: ", min_value = 0, max_value = 2022, help="Original construction date")
+    yearbuilt = st.number_input("Year Built: ", min_value = 0, max_value = 2022, help="Original construction date", value = 1971)
 
-    yearremodadd = st.number_input("Year Remod/Add: ", min_value = 0, max_value = 2022, help="Remodel date (same as construction date if no remodeling or additions)")
+    yearremodadd = st.number_input("Year Remod/Add: ", min_value = 0, max_value = 2022, help="Remodel date (same as construction date if no remodeling or additions)", value = 1984)
 
 
     exterior1st = st.selectbox("Exterior 1st: ", ('VinylSd', 'HdBoard', 'Wd Sdng', 'BrkFace', 'Plywood', 'MetalSd',
@@ -318,7 +318,7 @@ with col1:
     Wall Wall furnace
     ''')
     
-    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms")
+    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms", value = 0.43)
 
 with col2:
 
@@ -329,8 +329,8 @@ with col2:
     Po Poor - Severe cracking, settling, or wetness\n
     NA No Basement
     ''')
-    bsmtfinsf1 = st.number_input("BsmtFin SF 1: ", min_value = 0, help="Type 1 finished square feet")
-    bsmtfinsf2 = st.number_input("BsmtFin SF 2: ", min_value = 0, help="Type 2 finished square feet")
+    bsmtfinsf1 = st.number_input("BsmtFin SF 1: ", min_value = 0, help="Type 1 finished square feet", value = 442.30)
+    bsmtfinsf2 = st.number_input("BsmtFin SF 2: ", min_value = 0, help="Type 2 finished square feet", value = 47.96)
 
     heatingqc = st.selectbox("Heating QC: ", ('Ex', 'TA', 'Gd', 'Fa', 'Po'), help = '''Ex Excellent\n
     Gd Good\n
@@ -339,7 +339,7 @@ with col2:
     Po Poor
     ''')
     
-    bsmthalfbath = st.number_input("Bsmt Half Bath: ", min_value = 0, help="Basement half bathrooms")
+    bsmthalfbath = st.number_input("Bsmt Half Bath: ", min_value = 0, help="Basement half bathrooms", value = 0.06)
 
 with col3:
 
@@ -349,7 +349,7 @@ with col3:
     No No Exposure\n
     NA No Basement
     ''')
-    bsmtunfsf = st.number_input("Bsmt Unf SF: ", min_value = 0, help="Type 2 finished square feet")
+    bsmtunfsf = st.number_input("Bsmt Unf SF: ", min_value = 0, help="Type 2 finished square feet", value = 567.73)
 
     centralair = st.selectbox("Central Air: ", ('Y', 'N'), help = '''N No\n
     Y Yes
@@ -369,9 +369,9 @@ st.header("Ground Level")
 col1, col2 , col3 = st.columns(3)
 
 with col1:
-    firstflrsf = st.number_input("1st Flr SF: ", min_value = 0, help="First Floor square feet")
-    grlivarea = st.number_input("Gr Liv Area: ", min_value = 0, help="Above grade (ground) living area square feet")
-    fullbath = st.number_input("Full Bath: ", min_value = 0, help="Full bathrooms above grade")
+    firstflrsf = st.number_input("1st Flr SF: ", min_value = 0, help="First Floor square feet", value = 1164.49)
+    grlivarea = st.number_input("Gr Liv Area: ", min_value = 0, help="Above grade (ground) living area square feet", value = 1499.33)
+    fullbath = st.number_input("Full Bath: ", min_value = 0, help="Full bathrooms above grade", value = 1.58)
 
     functional = st.selectbox("Functional: ", ('Typ', 'Mod', 'Min2', 'Maj1', 'Min1', 'Sev', 'Sal', 'Maj2'), help = '''Home functionality rating\n
     Typ Typical Functionality\n
@@ -385,14 +385,14 @@ with col1:
     ''')
 
 with col2:
-    secondflrsf = st.number_input("2nd Flr SF: ", min_value = 0, help="Second floor square feet")
-    halfbath = st.number_input("Half Bath: ", min_value = 0, help="Half baths above grade")
-    kitchenabvgr = st.number_input("Kitchen AbvGr: ", min_value = 0, help="Number of kitchens")
-    fireplaces = st.number_input("Fireplaces: ", min_value = 0, help="Number of fireplaces")
+    secondflrsf = st.number_input("2nd Flr SF: ", min_value = 0, help="Second floor square feet", value = 329.33)
+    halfbath = st.number_input("Half Bath: ", min_value = 0, help="Half baths above grade", value = 0.37)
+    kitchenabvgr = st.number_input("Kitchen AbvGr: ", min_value = 0, help="Number of kitchens", value = 1.04)
+    fireplaces = st.number_input("Fireplaces: ", min_value = 0, help="Number of fireplaces", value = 0.59)
 
 with col3:
-    lowqualfinsf = st.number_input("Low Qual Fin SF: ", min_value = 0, help="Low quality finished square feet (all floors)")
-    bedroomabvgr = st.number_input("Bedroom AbvGr: ", min_value = 0, help="Number of bedrooms above basement level")
+    lowqualfinsf = st.number_input("Low Qual Fin SF: ", min_value = 0, help="Low quality finished square feet (all floors)", value = 5.51)
+    bedroomabvgr = st.number_input("Bedroom AbvGr: ", min_value = 0, help="Number of bedrooms above basement level", value = 2.84)
 
     kitchenqual = st.selectbox("Kitchen Qual: ", ('TA', 'Gd', 'Fa', 'Ex'), help = '''Ex Excellent\n
     Gd Good\n
@@ -433,7 +433,7 @@ with col2:
     NA No Garage
     ''')
 with col3:
-    garagearea = st.number_input("Garage Area: ", min_value = 0, help="Size of garage in square feet")
+    garagearea = st.number_input("Garage Area: ", min_value = 0, help="Size of garage in square feet", value = 473.67)
 
 
 st.header("External")
@@ -447,7 +447,7 @@ with col1:
     N Dirt/Gravel
     ''')
     
-    enclosedporch = st.number_input("Enclosed Porch: ", min_value = 0, help="Enclosed porch area in square feet")
+    enclosedporch = st.number_input("Enclosed Porch: ", min_value = 0, help="Enclosed porch area in square feet", value = 22.57)
 
     fence = st.selectbox("Fence: ", ('NA', 'MnPrv', 'GdPrv', 'GdWo', 'MnWw'), help = '''GdPrv Good Privacy\n
     MnPrv Minimum Privacy\n
@@ -456,13 +456,13 @@ with col1:
     NA No Fence
     ''')
 with col2:
-    wooddecksf = st.number_input("Wood Deck SF: ", min_value = 0, help="Wood deck area in square feet")
+    wooddecksf = st.number_input("Wood Deck SF: ", min_value = 0, help="Wood deck area in square feet", value = 93.83)
 
-    threessnporch = st.number_input("3Ssn Porch: ", min_value = 0, help="Three season porch area in square feet")
+    threessnporch = st.number_input("3Ssn Porch: ", min_value = 0, help="Three season porch area in square feet", value = 2.59)
 with col3:
-    openporchsf = st.number_input("Open Porch SF: ", min_value = 0, help="Open porch area in square feet")
+    openporchsf = st.number_input("Open Porch SF: ", min_value = 0, help="Open porch area in square feet", value = 47.56)
 
-    screenporch = st.number_input("Screen Porch: ", min_value = 0, help="Screen porch area in square feet")
+    screenporch = st.number_input("Screen Porch: ", min_value = 0, help="Screen porch area in square feet", value = 16.51)
 
 st.header("Misc Features")
 #split into 3 columns
@@ -470,9 +470,9 @@ col1, col2 , col3 = st.columns(3)
 
 with col1:
 
-    poolarea = st.number_input("Pool Area: ", min_value = 0, help="Pool area in square feet")
+    poolarea = st.number_input("Pool Area: ", min_value = 0, help="Pool area in square feet", value = 2.40)
 
-    mosold = st.number_input("Mo Sold: ", min_value = 0, help="Month Sold")
+    mosold = st.number_input("Mo Sold: ", min_value = 0, help="Month Sold", value = 6.22)
 
 with col2:
 
@@ -484,11 +484,11 @@ with col2:
     NA None
     ''')
     
-    yrsold = st.number_input("Yr Sold: ", min_value = 0, help="Year Sold")
+    yrsold = st.number_input("Yr Sold: ", min_value = 0, help="Year Sold", value = 2007.78)
 
 with col3:
     
-    miscval = st.number_input("Misc Val: ", min_value = 0, help="$Value of miscellaneous feature")
+    miscval = st.number_input("Misc Val: ", min_value = 0, help="$Value of miscellaneous feature", value = 51.57)
 
     saletype = st.selectbox("Sale Type: ", ('WD ', 'New', 'COD', 'ConLD', 'Con', 'CWD', 'Oth', 'ConLI','ConLw'), help = '''WD Warranty Deed - Conventional\n
     CWD Warranty Deed - Cash\n
