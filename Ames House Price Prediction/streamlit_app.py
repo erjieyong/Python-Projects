@@ -2,6 +2,23 @@ import streamlit as st
 import requests
 import json
 
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://github.com/erjieyong/Python-Projects/blob/ceb816ca86a46c6f9d2456388a25d3db4d4cf2e9/Ames%20House%20Price%20Prediction/Background%20Image.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
+
 # Title of the page
 st.title("Ames House Price Prediction")
 
