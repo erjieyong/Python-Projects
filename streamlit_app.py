@@ -5,9 +5,9 @@ import json
 # Title of the page
 st.title("Ames House Price Prediction")
 
-st.subheader("To get your house evaluated, do fill up as much information in the following as possible.\n
+st.subheader("""To get your house evaluated, do fill up as much information in the following as possible.\n
 If you are unsure, just leave it as the default value.\n
-Our default value is selected based on the most common selection in Ames for the past years")
+Our default value is selected based on the most common selection in Ames for the past years""")
 
 st.header("General House Information")
 #split into 3 columns
