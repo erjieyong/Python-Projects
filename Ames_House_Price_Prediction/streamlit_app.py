@@ -97,6 +97,19 @@ with col1:
     NoSeWa Electricity and Gas Only\n
     ELO Electricity only
     ''')
+        
+    condition1 = st.selectbox("Condition 1: ", ('Norm', 'RRAe', 'PosA', 'Artery', 'Feedr', 'PosN', 'RRAn', 'RRNe',
+           'RRNn'), help = '''Proximity to main road or railroad\n
+    Artery Adjacent to arterial street\n
+    Feedr Adjacent to feeder street\n
+    Norm Normal\n
+    RRNn Within 200' of North-South Railroad\n
+    RRAn Adjacent to North-South Railroad\n
+    PosN Near positive off-site feature--park, greenbelt, etc.\n
+    PosA Adjacent to postive off-site feature\n
+    RRNe Within 200' of East-West Railroad\n
+    RRAe Adjacent to East-West Railroad
+    ''')
 with col2:
     lotshape = st.selectbox("Lot Shape: ", ('Reg', 'IR1', 'IR2', 'IR3'), help = '''Reg Regular\n
     IR1 Slightly irregular\n
@@ -116,31 +129,7 @@ with col2:
     FR2 Frontage on 2 sides of property\n
     FR3 Frontage on 3 sides of property
     ''')
-    
-    condition1 = st.selectbox("Condition 1: ", ('Norm', 'RRAe', 'PosA', 'Artery', 'Feedr', 'PosN', 'RRAn', 'RRNe',
-           'RRNn'), help = '''Proximity to main road or railroad\n
-    Artery Adjacent to arterial street\n
-    Feedr Adjacent to feeder street\n
-    Norm Normal\n
-    RRNn Within 200' of North-South Railroad\n
-    RRAn Adjacent to North-South Railroad\n
-    PosN Near positive off-site feature--park, greenbelt, etc.\n
-    PosA Adjacent to postive off-site feature\n
-    RRNe Within 200' of East-West Railroad\n
-    RRAe Adjacent to East-West Railroad
-    ''')
-    
-with col3:
-        
-    landslope = st.selectbox("Land Slope: ", ('Gtl', 'Sev', 'Mod'), help = '''Gtl Gentle slope\n
-    Mod Moderate Slope\n
-    Sev Severe Slope
-    ''')
-    
-    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet")
 
-    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property")
-    
     condition2 = st.selectbox("Condition 2: ", ('Norm', 'RRNn', 'Feedr', 'Artery', 'PosA', 'PosN', 'RRAe', 'RRAn'), help = '''Proximity to main road or railroad (if a second is present)\n
     Artery Adjacent to arterial street\n
     Feedr Adjacent to feeder street\n
@@ -152,7 +141,16 @@ with col3:
     RRNe Within 200' of East-West Railroad\n
     RRAe Adjacent to East-West Railroad
     ''')
+with col3:
+        
+    landslope = st.selectbox("Land Slope: ", ('Gtl', 'Sev', 'Mod'), help = '''Gtl Gentle slope\n
+    Mod Moderate Slope\n
+    Sev Severe Slope
+    ''')
+    
+    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet")
 
+    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property")
 
 st.header("Building Information")
 #split into 3 columns
@@ -319,6 +317,9 @@ with col1:
     OthW Hot water or steam heat other than gas\n
     Wall Wall furnace
     ''')
+    
+    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms")
+
 with col2:
 
     bsmtcond = st.selectbox("Bsmt Cond: ", ('TA', 'Gd', 'Fa', 'Ex', 'Po'), help = '''Ex Excellent\n
@@ -337,8 +338,8 @@ with col2:
     Fa Fair\n
     Po Poor
     ''')
-
-    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms")
+    
+    bsmthalfbath = st.number_input("Bsmt Half Bath: ", min_value = 0, help="Basement half bathrooms")
 
 with col3:
 
@@ -361,7 +362,6 @@ with col3:
     Mix Mixed
     ''')
     
-    bsmthalfbath = st.number_input("Bsmt Half Bath: ", min_value = 0, help="Basement half bathrooms")
 
     
 st.header("Ground Level")
