@@ -580,7 +580,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://generalassemblydsi32.s3.ap-southeast-1.amazonaws.com/Background+Image.jpg");
+             background-image: url("https://github.com/erjieyong/Python-Projects/blob/main/Ames_House_Price_Prediction/bg.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
