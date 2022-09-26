@@ -8,7 +8,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://github.com/erjieyong/Python-Projects/blob/ceb816ca86a46c6f9d2456388a25d3db4d4cf2e9/Ames%20House%20Price%20Prediction/Background%20Image.jpg");
+             background-image: url("./bg");
              background-attachment: fixed;
              background-size: cover
          }}
