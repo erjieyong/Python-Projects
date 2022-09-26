@@ -148,9 +148,9 @@ with col3:
     Sev Severe Slope
     ''')
     
-    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet", value = 10065.21)
+    lotarea = st.number_input("Lot Area: ", min_value = 0, help="Lot size in square feet", value = 10065)
 
-    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property", value = 70.24)
+    lotfrontage = st.number_input("Lot Frontage: ", min_value = 0, help="Linear feet of street connected to property", value = 70)
 
 st.header("Building Information")
 #split into 3 columns
