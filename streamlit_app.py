@@ -5,6 +5,10 @@ import json
 # Title of the page
 st.title("Ames House Price Prediction")
 
+st.subheader("To get your house evaluated, do fill up as much information in the following as possible.\n
+If you are unsure, just leave it as the default value.\n
+Our default value is selected based on the most common selection in Ames for the past years")
+
 st.header("General House Information")
 #split into 3 columns
 col1, col2 , col3 = st.columns(3)
@@ -333,6 +337,9 @@ with col2:
     Fa Fair\n
     Po Poor
     ''')
+
+    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms")
+
 with col3:
 
     bsmtexposure = st.selectbox("Bsmt Exposure: ", ('No', 'Gd', 'Av', 'Mn', 'NA') , help = '''Gd Good Exposure\n
@@ -354,8 +361,6 @@ with col3:
     Mix Mixed
     ''')
     
-    bsmtfullbath = st.number_input("Bsmt Full Bath: ", min_value = 0, help="Basement full bathrooms")
-
     bsmthalfbath = st.number_input("Bsmt Half Bath: ", min_value = 0, help="Basement half bathrooms")
 
     
@@ -580,4 +585,4 @@ predictions = response.json()
 
 # Add a submit button
 if st.button("Submit"): 
-    st.write(f"Your house value is expected to be: {predictions['predictions'][0]:,.2f}")
+    st.write(f"Your house value is expected to be: USD ${predictions['predictions'][0]:,.2f}")
