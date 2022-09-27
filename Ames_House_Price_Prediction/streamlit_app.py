@@ -628,6 +628,9 @@ def add_bg_from_url():
          .h1, .h2, .p, .css-k3w14i, .css-10trblm, .css-81oif8, .st-b1, .st-bq, .css-dg4u6x, .css-rvekum p{{
              color: #C8C8C8;
          }}
+         .css-18ni7ap{{
+             background: #000;
+         }}
          </style>
          """,
          unsafe_allow_html=True
