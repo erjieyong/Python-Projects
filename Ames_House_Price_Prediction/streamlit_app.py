@@ -631,6 +631,9 @@ def add_bg_from_url():
          .css-18ni7ap{{
              background: #000;
          }}
+         .css-1aqmucy svg {{
+             stroke: #C8C8C8;
+         }}
          </style>
          """,
          unsafe_allow_html=True
