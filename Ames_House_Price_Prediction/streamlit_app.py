@@ -625,7 +625,7 @@ def add_bg_from_url():
              background-attachment: fixed;
              background-size: cover
          }}
-         .h1, .h2, .p, .css-k3w14i, .css-10trblm, .css-81oif8, .css-dg4u6x, .css-rvekum p{{
+         .h1, .h2, .p, .css-k3w14i, .css-10trblm, .css-81oif8, .css-dg4u6x, .css-rvekum p, .css-1offfwp p{{
              color: #C8C8C8;
          }}
          .css-18ni7ap{{
