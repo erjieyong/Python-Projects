@@ -3,7 +3,7 @@ import requests
 import json
 
 # Title of the page
-st.image("https://generalassemblydsi32.s3.ap-southeast-1.amazonaws.com/blackfin_logo_white-removebg.png", width =200)
+st.image("https://generalassemblydsi32.s3.ap-southeast-1.amazonaws.com/blackfin_logo_white-removebg.png", width =100)
 st.title("Ames House Price Prediction")
 
 st.caption("To get your house evaluated, do fill up as much information in the following as possible.")
