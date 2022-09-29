@@ -51,7 +51,7 @@ Baseline Pycaret | Gradient Boosting Regressor | 0.91 |  21867.08 | 28079.46
 Pycaret w/o outliers | Bayesian Ridge | 0.92 | 22611.63 | 26095.17
 **Pycaret w scaling & selection*** | Bayesian Ridge | 0.93 | 17983.57 | 22604.85
 
-*Model was selected as it gave us the lowest rmse when scored on [kaggle](https://www.kaggle.com/competitions/dsi-us-11-project-2-regression-challenge/leaderboard)
+*Model was selected as it is the **Top #1** private score on [kaggle](https://www.kaggle.com/competitions/dsi-us-11-project-2-regression-challenge/leaderboard)
 
 ## Deployment
 The selected model was deployed using the following packages/programs
