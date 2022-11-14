@@ -1,5 +1,5 @@
 # Background
-This folder contains some minigames that I built while learning python
+This folder contains projects that I built while learning python
 
 # How to run
 - Download each ipynb file
